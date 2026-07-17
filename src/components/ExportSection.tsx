@@ -22,26 +22,26 @@ export const ExportSection: React.FC<ExportSectionProps> = ({ config, isComplete
       optimization_steps: {
         structured_pruning: config.sparseGpt.enable
           ? {
-              method: 'SparseGPT',
-              sparsity_ratio: config.sparseGpt.sparsityRatio,
-              pattern: config.sparseGpt.pattern,
-            }
+            method: 'SparseGPT',
+            sparsity_ratio: config.sparseGpt.sparsityRatio,
+            pattern: config.sparseGpt.pattern,
+          }
           : 'disabled',
         quantization: config.awq.enable
           ? {
-              method: 'AWQ',
-              bit_width: config.awq.bitWidth,
-              group_size: config.awq.groupSize,
-            }
+            method: 'AWQ',
+            bit_width: config.awq.bitWidth,
+            group_size: config.awq.groupSize,
+          }
           : 'disabled',
         fine_tuning: config.lora.enable
           ? {
-              method: 'LoRA',
-              rank: config.lora.rank,
-              alpha: config.lora.alpha,
-              dropout: config.lora.dropout,
-              learning_rate: config.lora.lr,
-            }
+            method: 'LoRA',
+            rank: config.lora.rank,
+            alpha: config.lora.alpha,
+            dropout: config.lora.dropout,
+            learning_rate: config.lora.lr,
+          }
           : 'disabled',
       },
       export_path: config.outputFolder,
@@ -63,7 +63,7 @@ export const ExportSection: React.FC<ExportSectionProps> = ({ config, isComplete
   };
 
   return (
-    <div className="bg-white p-5 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+    <div className="bg-white px-5 py-2 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
       <div className="flex flex-col gap-1 text-center sm:text-left">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700">
           6. Export
@@ -79,11 +79,10 @@ export const ExportSection: React.FC<ExportSectionProps> = ({ config, isComplete
         type="button"
         disabled={!isCompleted}
         onClick={handleExport}
-        className={`px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center gap-2 border transition duration-200 cursor-pointer active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 ${
-          isCompleted
+        className={`px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider flex items-center gap-2 border transition duration-200 cursor-pointer active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 ${isCompleted
             ? 'bg-purple-600 border-purple-500/30 hover:bg-purple-500 text-white shadow-[0_0_15px_rgba(147,51,234,0.2)]'
             : 'bg-gray-100 border-gray-200 text-gray-400'
-        }`}
+          }`}
       >
         <Download className="w-4 h-4" />
         Export Model

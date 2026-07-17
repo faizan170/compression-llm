@@ -13,7 +13,7 @@ export const ProgressStepper: React.FC<ProgressStepperProps> = ({
   isCompressing,
 }) => {
   return (
-    <div className="bg-white pt-2 px-4 rounded-xl border border-gray-200 flex flex-col gap-2 shadow-sm select-none">
+    <div className="bg-white pt-1 px-4 rounded-xl border border-gray-200 flex flex-col gap-2 shadow-sm select-none">
       <div className="flex items-center justify-between">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700">
           3. Compression Progress

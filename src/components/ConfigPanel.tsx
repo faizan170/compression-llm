@@ -56,12 +56,12 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
   return (
     <div className="w-full lg:w-[350px] bg-white p-5 border-r border-gray-200 flex flex-col gap-6 select-none shrink-0 overflow-y-auto">
       {/* 1. Model & Data */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700">
           1. Model & Data
         </h2>
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
           <label className="text-xs font-semibold text-gray-700">Model</label>
           <select
             value={config.model}
@@ -77,7 +77,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
           </select>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
           <label className="text-xs font-semibold text-gray-700">Dataset</label>
           <select
             value={config.dataset}
@@ -93,7 +93,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
           </select>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
           <label className="text-xs font-semibold text-gray-700">Device</label>
           <select
             value={config.device}
@@ -109,7 +109,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
           </select>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1">
           <label className="text-xs font-semibold text-gray-700">Output Folder</label>
           <div className="flex gap-2">
             <input
@@ -135,41 +135,41 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
         </div>
       </div>
 
-      <hr className="border-gray-200" />
+      <hr className="border-gray-200 p-0" />
 
       {/* 2. Compression Configuration */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700 mb-1">
           2. Compression Configuration
         </h2>
 
         {/* SparseGPT */}
-        <div className="flex flex-col gap-2.5">
-          <h3 className="text-xs font-semibold text-blue-700">
-            SparseGPT (Structured Pruning)
-          </h3>
-          
-          <div className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              id="sparsegpt-enable"
-              checked={config.sparseGpt.enable}
-              onChange={(e) => setSparseField('enable', e.target.checked)}
-              disabled={isCompressing}
-              className="w-4 h-4 text-blue-600 rounded bg-white border-gray-300 focus:ring-blue-500 cursor-pointer disabled:opacity-50"
-            />
-            <label
-              htmlFor="sparsegpt-enable"
-              className="text-xs font-semibold text-gray-700 cursor-pointer select-none"
-            >
-              Enable SparseGPT
-            </label>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-semibold text-blue-700">
+              SparseGPT (Structured Pruning)
+            </h3>
+            <div className="flex items-center gap-1.5">
+              <input
+                type="checkbox"
+                id="sparsegpt-enable"
+                checked={config.sparseGpt.enable}
+                onChange={(e) => setSparseField('enable', e.target.checked)}
+                disabled={isCompressing}
+                className="w-3.5 h-3.5 text-blue-600 rounded bg-white border-gray-300 focus:ring-blue-500 cursor-pointer disabled:opacity-50"
+              />
+              <label
+                htmlFor="sparsegpt-enable"
+                className="text-[11px] font-semibold text-gray-700 cursor-pointer select-none"
+              >
+                Enable
+              </label>
+            </div>
           </div>
 
           <div
-            className={`flex items-center gap-3 transition-all ${
-              config.sparseGpt.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
-            }`}
+            className={`flex items-center gap-3 transition-all ${config.sparseGpt.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
+              }`}
           >
             <div className="flex items-center gap-2 flex-1 min-w-0">
               <span className="text-[11px] font-medium text-gray-700 shrink-0">Sparsity Ratio</span>
@@ -202,32 +202,32 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
         <hr className="border-gray-200 my-1" />
 
         {/* AWQ Quantization */}
-        <div className="flex flex-col gap-2.5">
-          <h3 className="text-xs font-semibold text-blue-700">
-            AWQ (Quantization)
-          </h3>
-          
-          <div className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              id="awq-enable"
-              checked={config.awq.enable}
-              onChange={(e) => setAwqField('enable', e.target.checked)}
-              disabled={isCompressing}
-              className="w-4 h-4 text-blue-600 rounded bg-white border-gray-300 focus:ring-blue-500 cursor-pointer disabled:opacity-50"
-            />
-            <label
-              htmlFor="awq-enable"
-              className="text-xs font-semibold text-gray-700 cursor-pointer select-none"
-            >
-              Enable AWQ
-            </label>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-semibold text-blue-700">
+              AWQ (Quantization)
+            </h3>
+            <div className="flex items-center gap-1.5">
+              <input
+                type="checkbox"
+                id="awq-enable"
+                checked={config.awq.enable}
+                onChange={(e) => setAwqField('enable', e.target.checked)}
+                disabled={isCompressing}
+                className="w-3.5 h-3.5 text-blue-600 rounded bg-white border-gray-300 focus:ring-blue-500 cursor-pointer disabled:opacity-50"
+              />
+              <label
+                htmlFor="awq-enable"
+                className="text-[11px] font-semibold text-gray-700 cursor-pointer select-none"
+              >
+                Enable
+              </label>
+            </div>
           </div>
 
           <div
-            className={`flex items-center gap-3 transition-all ${
-              config.awq.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
-            }`}
+            className={`flex items-center gap-3 transition-all ${config.awq.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
+              }`}
           >
             <div className="flex items-center gap-2 flex-1 min-w-0">
               <span className="text-[11px] font-medium text-gray-700 shrink-0">Bit Width</span>
@@ -261,32 +261,32 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
         <hr className="border-gray-200 my-1" />
 
         {/* LoRA */}
-        <div className="flex flex-col gap-2.5">
-          <h3 className="text-xs font-semibold text-blue-700">
-            LoRA (Fine-tuning)
-          </h3>
-          
-          <div className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              id="lora-enable"
-              checked={config.lora.enable}
-              onChange={(e) => setLoraField('enable', e.target.checked)}
-              disabled={isCompressing}
-              className="w-4 h-4 text-blue-600 rounded bg-white border-gray-300 focus:ring-blue-500 cursor-pointer disabled:opacity-50"
-            />
-            <label
-              htmlFor="lora-enable"
-              className="text-xs font-semibold text-gray-700 cursor-pointer select-none"
-            >
-              Enable LoRA
-            </label>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-semibold text-blue-700">
+              LoRA (Fine-tuning)
+            </h3>
+            <div className="flex items-center gap-1.5">
+              <input
+                type="checkbox"
+                id="lora-enable"
+                checked={config.lora.enable}
+                onChange={(e) => setLoraField('enable', e.target.checked)}
+                disabled={isCompressing}
+                className="w-3.5 h-3.5 text-blue-600 rounded bg-white border-gray-300 focus:ring-blue-500 cursor-pointer disabled:opacity-50"
+              />
+              <label
+                htmlFor="lora-enable"
+                className="text-[11px] font-semibold text-gray-700 cursor-pointer select-none"
+              >
+                Enable
+              </label>
+            </div>
           </div>
 
           <div
-            className={`flex flex-col gap-2.5 transition-all ${
-              config.lora.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
-            }`}
+            className={`flex flex-col gap-2.5 transition-all ${config.lora.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
+              }`}
           >
             {/* LoRA Row 1 */}
             <div className="flex items-center gap-3">

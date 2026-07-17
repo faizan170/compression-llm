@@ -252,7 +252,7 @@ function App() {
       <Header device={config.device} />
 
       {/* Main dashboard content area - taking full height and width with page padding, and a layout border enclosing sidebar and main workspace */}
-      <div className="flex-1 p-4 md:p-6 min-h-0 overflow-hidden">
+      <div className="flex-1 px-4 py-2 md:px-4 md:py-2 min-h-0 overflow-hidden">
         <div className="w-full h-full bg-white rounded-2xl border border-gray-200 shadow-2xl flex flex-col lg:flex-row overflow-hidden">
           {/* Sidebar controls (White background) */}
           <ConfigPanel
@@ -263,8 +263,8 @@ function App() {
           />
 
           {/* Main workspace panels (Light blue-gray background) */}
-          <div className="flex-1 p-3.5 flex flex-col gap-3.5 overflow-y-auto bg-[#f0f2f5]">
-            
+          <div className="flex-1 p-3.5 flex flex-col gap-2 overflow-y-auto bg-[#f0f2f5]">
+
             {/* Stepper progress (White background card) */}
             <ProgressStepper
               steps={runState.steps}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import type { Metrics } from '../types';
 
+const CHART_HEIGHT = '175px'; // Adjust this variable to change all 4 bar charts' height
+
 interface ComparisonChartsProps {
   baseline: Metrics;
   awqOnly: Metrics;
@@ -77,7 +79,10 @@ export const ComparisonCharts: React.FC<ComparisonChartsProps> = ({
     const hProposed = (activeVals.proposed / maxVal) * 100;
 
     return (
-      <div className="flex-1 min-w-[200px] bg-slate-50 border border-gray-200 p-4 rounded-xl flex flex-col justify-between h-[250px] relative group/chart shadow-sm">
+      <div 
+        className="flex-1 min-w-[200px] bg-slate-50 border border-gray-200 p-4 rounded-xl flex flex-col justify-between relative group/chart shadow-sm"
+        style={{ height: CHART_HEIGHT }}
+      >
         {/* Y Axis Gridlines (Visual only) */}
         <div className="absolute inset-x-0 top-6 bottom-14 flex flex-col justify-between pointer-events-none px-4">
           <div className="border-t border-gray-200/70 w-full" />
