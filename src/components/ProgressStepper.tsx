@@ -13,7 +13,7 @@ export const ProgressStepper: React.FC<ProgressStepperProps> = ({
   isCompressing,
 }) => {
   return (
-    <div className="bg-white pt-1 px-4 rounded-xl border border-gray-200 flex flex-col gap-2 shadow-sm select-none">
+    <div className="bg-white pt-1 pb-1.5 h-md:py-[11px] h-lg:py-[14px] px-4 rounded-xl border border-gray-200 flex flex-col gap-2 h-md:gap-3.5 h-lg:gap-5 shadow-sm select-none">
       <div className="flex items-center justify-between">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700">
           3. Compression Progress
@@ -27,7 +27,7 @@ export const ProgressStepper: React.FC<ProgressStepperProps> = ({
       </div>
 
       {/* Stepper container - 100% fluid, no horizontal scrollbars */}
-      <div className="w-full mt-1.5 pb-0.5 pt-1">
+      <div className="w-full mt-1.5 h-md:mt-2.5 h-lg:mt-3.5 pb-0.5 pt-1">
         <div className="w-full flex items-start justify-between">
           {steps.map((step, idx) => {
             const isCompleted = step.status === 'completed';
@@ -72,7 +72,7 @@ export const ProgressStepper: React.FC<ProgressStepperProps> = ({
                   </div>
 
                   {/* Labels */}
-                  <span className={`text-[10px] sm:text-[11px] font-medium mt-1 block h-8 line-clamp-2 leading-tight px-0.5 ${titleClass}`}>
+                  <span className={`text-[10px] sm:text-[11px] font-medium mt-1 h-md:mt-1.5 h-lg:mt-2 block h-8 line-clamp-2 leading-tight px-0.5 ${titleClass}`}>
                     {step.label}
                   </span>
 

@@ -77,7 +77,7 @@ function App() {
   const baselineMetrics = modelPreset.baseline;
 
   // Proposed metrics calculations
-  const { proposed: proposedMetrics, awqOnly: awqOnlyMetrics } = calculateProposedMetrics(config);
+  const { proposed: proposedMetrics } = calculateProposedMetrics(config);
 
   // Trigger compression simulation
   const runCompressionSimulation = () => {
@@ -263,7 +263,7 @@ function App() {
           />
 
           {/* Main workspace panels (Light blue-gray background) */}
-          <div className="flex-1 p-3.5 flex flex-col gap-2 overflow-y-auto bg-[#f0f2f5]">
+          <div className="flex-1 p-3.5 h-md:py-5 h-lg:py-7 flex flex-col gap-2 h-md:gap-3.5 h-lg:gap-5 overflow-y-auto bg-[#f0f2f5]">
 
             {/* Stepper progress (White background card) */}
             <ProgressStepper
@@ -316,7 +316,6 @@ function App() {
             {/* Comparison Charts (White background card) */}
             <ComparisonCharts
               baseline={baselineMetrics}
-              awqOnly={awqOnlyMetrics}
               proposed={proposedMetrics}
               isCompleted={isCompleted}
             />

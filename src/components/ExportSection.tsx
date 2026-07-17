@@ -63,7 +63,7 @@ export const ExportSection: React.FC<ExportSectionProps> = ({ config, isComplete
   };
 
   return (
-    <div className="bg-white px-5 py-2 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+    <div className="bg-white px-5 py-2 h-md:py-[15px] h-lg:py-[20px] rounded-xl border border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
       <div className="flex flex-col gap-1 text-center sm:text-left">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700">
           6. Export

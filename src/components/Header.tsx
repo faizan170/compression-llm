@@ -10,7 +10,7 @@ export const Header: React.FC<HeaderProps> = ({ device }) => {
   const gpuName = device.includes('GPU:') ? device.replace('GPU: ', '') : device;
 
   return (
-    <header className="flex flex-col md:flex-row items-center justify-between px-6 py-4 bg-[#111625] border-b border-[#1f293d] shadow-lg sticky top-0 z-50">
+    <header className="flex flex-col md:flex-row items-center justify-between px-6 py-4 h-md:py-5 h-lg:py-6 bg-[#111625] border-b border-[#1f293d] shadow-lg sticky top-0 z-50">
       {/* Left side: Logo & Title */}
       <div className="flex items-center gap-3">
         <div className="bg-blue-600/20 p-2 rounded-lg border border-blue-500/30 flex items-center justify-center glow-blue">

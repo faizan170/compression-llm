@@ -54,9 +54,9 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
   };
 
   return (
-    <div className="w-full lg:w-[350px] bg-white p-5 border-r border-gray-200 flex flex-col gap-6 select-none shrink-0 overflow-y-auto">
+    <div className="w-full lg:w-[350px] bg-white p-5 h-md:py-6 h-md:px-5 h-lg:py-8 h-lg:px-6 border-r border-gray-200 flex flex-col gap-6 h-md:gap-8 h-lg:gap-10 select-none shrink-0 overflow-y-auto">
       {/* 1. Model & Data */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 h-md:gap-3.5 h-lg:gap-5">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700">
           1. Model & Data
         </h2>
@@ -138,7 +138,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
       <hr className="border-gray-200 p-0" />
 
       {/* 2. Compression Configuration */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 h-md:gap-3.5 h-lg:gap-5">
         <h2 className="text-sm font-bold uppercase tracking-wider text-blue-700 mb-1">
           2. Compression Configuration
         </h2>
@@ -168,7 +168,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
           </div>
 
           <div
-            className={`flex items-center gap-3 transition-all ${config.sparseGpt.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
+            className={`flex items-center gap-3 h-md:gap-4.5 h-lg:gap-6 transition-all ${config.sparseGpt.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
               }`}
           >
             <div className="flex items-center gap-2 flex-1 min-w-0">
@@ -226,7 +226,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
           </div>
 
           <div
-            className={`flex items-center gap-3 transition-all ${config.awq.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
+            className={`flex items-center gap-3 h-md:gap-4.5 h-lg:gap-6 transition-all ${config.awq.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
               }`}
           >
             <div className="flex items-center gap-2 flex-1 min-w-0">
@@ -285,11 +285,11 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
           </div>
 
           <div
-            className={`flex flex-col gap-2.5 transition-all ${config.lora.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
+            className={`flex flex-col gap-2.5 h-md:gap-3.5 h-lg:gap-5 transition-all ${config.lora.enable ? 'opacity-100' : 'opacity-35 pointer-events-none'
               }`}
           >
             {/* LoRA Row 1 */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 h-md:gap-4.5 h-lg:gap-6">
               <div className="flex items-center gap-2 flex-1 min-w-0">
                 <span className="text-[11px] font-medium text-gray-700 shrink-0">Rank (r)</span>
                 <select
@@ -319,7 +319,7 @@ export const ConfigPanel: React.FC<ConfigPanelProps> = ({
             </div>
 
             {/* LoRA Row 2 */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 h-md:gap-4.5 h-lg:gap-6">
               <div className="flex items-center gap-2 flex-1 min-w-0">
                 <span className="text-[11px] font-medium text-gray-700 shrink-0">Dropout</span>
                 <select
